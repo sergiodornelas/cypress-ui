@@ -24,24 +24,29 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+//COMANDO CUSTOMIZADO PARA REALIZAR LOGIN
 
-Cypress.Commands.add('login', (email, senha) => { 
+
+
+//COMANDOS CUSTOMIZADOS PARA VALIDAR LOGIN
+Cypress.Commands.add('login', (email, senha) => {
     cy.get('#username').type(email)
     cy.get('#password').type(senha)
     cy.get('.woocommerce-form > .button').click()
 
- })
+})
 
- Cypress.Commands.add('loginEsenhaVazios', () => { 
+Cypress.Commands.add('loginEsenhaVazios', () => {
     cy.get('.woocommerce-form > .button').click()
- })
+})
 
- Cypress.Commands.add('loginCorretoEsenhaVazia', (email) => { 
+Cypress.Commands.add('loginCorretoEsenhaVazia', (email) => {
     cy.get('#username').type(email)
     cy.get('.woocommerce-form > .button').click()
- })
+})
 
- Cypress.Commands.add('loginVazioEsenhaCorreta', (senha) => { 
+Cypress.Commands.add('loginVazioEsenhaCorreta', (senha) => {
     cy.get('#password').type(senha)
     cy.get('.woocommerce-form > .button').click()
- })
+})
+
