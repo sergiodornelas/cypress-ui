@@ -14,3 +14,4 @@ describe('Funcionalidade: Endereço', () => {
     cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
   })
 })
+
