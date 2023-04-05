@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-//COMANDO CUSTOMIZADO PARA REALIZAR LOGIN
+
 
 
 
@@ -50,6 +50,7 @@ Cypress.Commands.add('loginVazioEsenhaCorreta', (senha) => {
     cy.get('.woocommerce-form > .button').click()
 })
 
+//COMANDOS CUSTOMIZADOS PARA VALIDAR ENDEREÇO
 Cypress.Commands.add('endereco', (nome, sobrenome, instituicao, pais, endereco, cidade, estado, cep ) => {
     cy.get('.woocommerce-MyAccount-navigation-link--edit-address > a').click()
     cy.get(':nth-child(2) > .title > .edit').click()
