@@ -51,7 +51,7 @@ Cypress.Commands.add('loginVazioEsenhaCorreta', (senha) => {
 })
 
 //COMANDOS CUSTOMIZADOS PARA VALIDAR ENDEREÇO
-Cypress.Commands.add('endereco', (nome, sobrenome, instituicao, pais, endereco, cidade, estado, cep ) => {
+Cypress.Commands.add('endereco', (nome, sobrenome, instituicao, pais, endereco, cidade, estado, cep) => {
     cy.get('.woocommerce-MyAccount-navigation-link--edit-address > a').click()
     cy.get(':nth-child(2) > .title > .edit').click()
     cy.get('#shipping_first_name').clear().type(nome)
@@ -62,6 +62,16 @@ Cypress.Commands.add('endereco', (nome, sobrenome, instituicao, pais, endereco, 
     cy.get('#shipping_city').clear().type(cidade)
     cy.get('#select2-shipping_state-container').click().type(estado).get('[class="select2-results__options"]').click()
     cy.get('#shipping_postcode').clear().type(cep)
-    cy.get('.button').click()
+    cy.get(':nth-child(2) > .button').click()
 })
 
+//COMANDO CUSTOMIZADO PARA ADICIONAR PRODUTO NO CARRINHO
+Cypress.Commands.add('carrinhoProdutos', (produto,tamanho, cor, quantidade) => { 
+    cy.get('#primary-menu > .menu-item-629 > a').click()
+    cy.get('.product-block').eq(produto).click()
+    cy.get('.button-variable-item-' + tamanho).click()
+    cy.get('.button-variable-item-' + cor).click()
+    cy.get('.input-text').clear().type(quantidade)
+    cy.get('.single_add_to_cart_button').click()
+    cy.get('.woocommerce-message').should('contain', quantidade)
+ })

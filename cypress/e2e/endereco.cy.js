@@ -9,9 +9,12 @@ beforeEach(() => {
 
 
 describe('Funcionalidade: Endereço', () => {
-  it('Cenário: Adicionando informações ao endereço', () => {
-    cy.endereco('sergio', 'dornelas', 'ebac', 'Brasil', 'avenida norte', 'Recife', 'Pernambuco', 52051000)
+
+  it('Cenário 1: Adicionando informações ao endereço', () => {
+    cy.endereco('sergio', 'dornelas', 'ebac', 'Brasil', 'avenida norte', 'Recife', 'Pernambuco', 52051002)
     cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
   })
+
 })
+
 

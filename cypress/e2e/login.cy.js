@@ -8,6 +8,7 @@ beforeEach(() => {
 });
 
 describe('Funcionalidade: Login', () => {
+
   let emailFake = faker.internet.email()
   let senhaFake = faker.internet.password()
 
@@ -20,7 +21,6 @@ describe('Funcionalidade: Login', () => {
   it('cenário 2: login com e-mail inválido e senha válida', () => {
     cy.login(emailFake, perfil.senha)
     cy.get('.woocommerce-error > li').should('contain', 'Endereço de e-mail desconhecido. Verifique novamente ou tente seu nome de usuário.')
-
   });
 
 
