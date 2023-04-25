@@ -26,3 +26,9 @@
 * juniorebac@gmail.com
 * minhasenha
 ***
+8. Comando para abrir o cypress com navegador e modo headless:
+* "scripts": {
+  "cy:open": "cypress open",
+  "test": "cypress run"
+},
+***
