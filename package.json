@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "cypress": "^12.9.0"
+    "cypress": "^12.12.0"
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0"
@@ -9,6 +9,4 @@
     "cy:open": "cypress open",
     "test": "cypress run"
   }
-  
 }
-
