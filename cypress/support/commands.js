@@ -75,3 +75,11 @@ Cypress.Commands.add('carrinhoProdutos', (produto,tamanho, cor, quantidade) => {
     cy.get('.single_add_to_cart_button').click()
     cy.get('.woocommerce-message').should('contain', quantidade)
  })
+
+ //COMANDO CUSTOMIZADO PARA REMOVER PRODUTO DO CARRINHO
+ Cypress.Commands.add('removerProduto', () => { 
+    cy.get('.dropdown-toggle > .mini-cart-items').click()
+    cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .view-cart').click()
+    cy.get('.remove > .fa').click()
+    
+ })
