@@ -10,12 +10,12 @@
 
 
  ## _Funcionalidade login:_
-* Cenário: login com e-mail e senha válidos.
-* Cenário: login com e-mail inválido e senha válida.
-* Cenário: login com e-mail válido e senha inválida.
-* Cenário: login com e-mail e senha vazios.
-* Cenário: login com e-mail válido e senha vazia.
-* Cenário: login com e-mail vazio e senha válida.
+* Cenário: Login com e-mail e senha válidos.
+* Cenário: Login com e-mail inválido e senha válida.
+* Cenário: Login com e-mail válido e senha inválida.
+* Cenário: Login com e-mail e senha vazios.
+* Cenário: Login com e-mail válido e senha vazia.
+* Cenário: Login com e-mail vazio e senha válida.
 
  ## _Funcionalidade carrinho de compras:_
 * Cenário: Adicionando produtos no carrinho.
