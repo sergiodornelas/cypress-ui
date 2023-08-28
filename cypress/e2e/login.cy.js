@@ -13,19 +13,19 @@ describe('Funcionalidade: Login', () => {
   let senhaFake = faker.internet.password()
 
   it('cenário 1: login com e-mail e senha válidos', () => {
-    cy.login(perfil.email, perfil.senha)
+    cy.login(perfil.email, perfil.senha, {delay:0})
     cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, juniorebac')
   })
 
 
   it('cenário 2: login com e-mail inválido e senha válida', () => {
-    cy.login(emailFake, perfil.senha)
+    cy.login(emailFake, perfil.senha, {delay:0})
     cy.get('.woocommerce-error > li').should('contain', 'Endereço de e-mail desconhecido. Verifique novamente ou tente seu nome de usuário.')
   });
 
 
   it('cenário 3: login com e-mail válido e senha inválida', () => {
-    cy.login(perfil.email, senhaFake)
+    cy.login(perfil.email, senhaFake, {delay:0})
     cy.get('.woocommerce-error > li').should('contain', 'Erro: a senha fornecida para o e-mail juniorebac@gmail.com está incorreta. Perdeu a senha?')
   });
 
@@ -37,13 +37,13 @@ describe('Funcionalidade: Login', () => {
 
 
   it('cenário 5: login com e-mail válido e senha vazia', () => {
-    cy.loginCorretoEsenhaVazia(perfil.email)
+    cy.loginCorretoEsenhaVazia(perfil.email, {delay:0})
     cy.get('.woocommerce-error > li').should('contain', 'Erro: o campo da senha está vazio.')
   });
 
 
   it('cenário 6: login com e-mail vazio e senha válida', () => {
-    cy.loginVazioEsenhaCorreta(perfil.senha)
+    cy.loginVazioEsenhaCorreta(perfil.senha, {delay:0})
     cy.get('.woocommerce-error > li').should('contain', 'Erro: Nome de usuário é obrigatório.')
   });
 
