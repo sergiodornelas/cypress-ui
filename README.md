@@ -6,7 +6,7 @@
 
 
 ## _Libs npm utilizadas:_
-➫ Biblioteca Faker: [Loja EBAC➚](https://www.npmjs.com/package/@faker-js/faker).
+➫ Biblioteca Faker: [➚](https://www.npmjs.com/package/@faker-js/faker).
 
 
  ## _Funcionalidade login:_
