@@ -1,34 +1,8 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
+
 // Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 
-
-
-
-//COMANDOS CUSTOMIZADOS PARA VALIDAR LOGIN
+//Comandos customizados para realização de login.
 Cypress.Commands.add('login', (email, senha) => {
     cy.get('#username').type(email)
     cy.get('#password').type(senha)
@@ -50,7 +24,7 @@ Cypress.Commands.add('loginVazioEsenhaCorreta', (senha) => {
     cy.get('.woocommerce-form > .button').click()
 })
 
-//COMANDOS CUSTOMIZADOS PARA VALIDAR ENDEREÇO
+//Comando customizado para cadastro de endereço.
 Cypress.Commands.add('endereco', (nome, sobrenome, instituicao, pais, endereco, cidade, estado, cep) => {
     cy.get('.woocommerce-MyAccount-navigation-link--edit-address > a').click()
     cy.get(':nth-child(2) > .title > .edit').click()
@@ -65,7 +39,7 @@ Cypress.Commands.add('endereco', (nome, sobrenome, instituicao, pais, endereco, 
     cy.get(':nth-child(2) > .button').click()
 })
 
-//COMANDO CUSTOMIZADO PARA ADICIONAR PRODUTO NO CARRINHO
+//Comando customizado para adicionar um produto no carrinho.
 Cypress.Commands.add('carrinhoProdutos', (produto,tamanho, cor, quantidade) => { 
     cy.get('#primary-menu > .menu-item-629 > a').click()
     cy.get('.product-block').eq(produto).click()
@@ -76,10 +50,9 @@ Cypress.Commands.add('carrinhoProdutos', (produto,tamanho, cor, quantidade) => {
     cy.get('.woocommerce-message').should('contain', quantidade)
  })
 
- //COMANDO CUSTOMIZADO PARA REMOVER PRODUTO DO CARRINHO
- //Cypress.Commands.add('removerProduto', () => { 
-    
-    
-    
-    
- //})
+ //Comando customizado para remover um produto do carrinho.
+ Cypress.Commands.add('removerProduto', () => { 
+    cy.get('[class="mini-cart-items"]').click()
+    cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .view-cart').click()
+    cy.get(':nth-child(1) > .product-quantity > .quantity > .minus').click()
+ })
