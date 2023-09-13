@@ -1,6 +1,6 @@
 /// <reference types ="Cypress"/>
 
-const perfil = require('../fixtures/perfil.json')
+const perfil = require('../../fixtures/perfil.json')
 
 beforeEach(() => {
   cy.visit('minha-conta/')

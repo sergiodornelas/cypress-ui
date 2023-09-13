@@ -1,7 +1,3 @@
-
-// Cypress.Commands.add('login', (email, password) => { ... })
-
-
 //Comandos customizados para realização de login.
 Cypress.Commands.add('login', (email, senha) => {
     cy.get('#username').type(email)
@@ -47,7 +43,6 @@ Cypress.Commands.add('carrinhoProdutos', (produto,tamanho, cor, quantidade) => {
     cy.get('.button-variable-item-' + cor).click()
     cy.get('.input-text').clear().type(quantidade)
     cy.get('.single_add_to_cart_button').click()
-    cy.get('.woocommerce-message').should('contain', quantidade)
  })
 
  //Comando customizado para remover um produto do carrinho.

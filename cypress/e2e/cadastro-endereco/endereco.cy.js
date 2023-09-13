@@ -1,6 +1,6 @@
 /// <reference types="Cypress">
-
-const perfil = require('../fixtures/perfil.json')
+const endereco = require('../../fixtures/endereco.json')
+const perfil = require('../../fixtures/perfil.json')
 
 beforeEach(() => {
   cy.visit('minha-conta/')
@@ -11,7 +11,7 @@ beforeEach(() => {
 describe('Funcionalidade: Endereço', () => {
 
   it('Cenário 1: Adicionando informações ao endereço', () => {
-    cy.endereco('sergio', 'dornelas', 'ebac', 'Brasil', 'avenida norte', 'Recife', 'Pernambuco', 52051002, {delay:0})
+    cy.endereco(endereco.nome, endereco.sobrenome, endereco.instituicao, endereco.pais, endereco.endereco, endereco.cidade, endereco.estado, endereco.cep)
     cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
   })
 
